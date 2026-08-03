@@ -1,0 +1,112 @@
+# Functional Requirements
+
+## Version
+
+0.1
+
+---
+
+# Goal
+
+ReqPilot assists Business Analysts and Solution Designers by analysing business documents using AI.
+
+---
+
+# Functional Requirements
+
+## FR1
+
+The system shall allow a user to upload a Word document.
+
+---
+
+## FR2
+
+The system shall extract text from the uploaded document.
+
+---
+
+## FR3
+
+The system shall generate an executive summary.
+
+---
+
+## FR4
+
+The system shall identify functional requirements.
+
+---
+
+## FR5
+
+The system shall identify ambiguous or unclear requirements.
+
+---
+
+## FR6
+
+The system shall generate clarification questions.
+
+---
+
+## FR7
+
+The system shall display all generated outputs in the web application.
+
+
+# Functional Requirements
+
+## Version
+
+0.1
+
+---
+
+# Goal
+
+ReqPilot assists Business Analysts and Solution Designers by analysing business documents using AI.
+
+---
+
+# Functional Requirements
+
+## FR1
+
+The system shall allow a user to upload a Word document.
+
+---
+
+## FR2
+
+The system shall extract text from the uploaded document.
+
+---
+
+## FR3
+
+The system shall generate an executive summary.
+
+---
+
+## FR4
+
+The system shall identify functional requirements.
+
+---
+
+## FR5
+
+The system shall identify ambiguous or unclear requirements.
+
+---
+
+## FR6
+
+The system shall generate clarification questions.
+
+---
+
+## FR7
+
+The system shall display all generated outputs in the web application.
