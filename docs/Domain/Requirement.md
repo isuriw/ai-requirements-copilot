@@ -55,3 +55,26 @@ This avoids unnecessary complexity while maintaining sufficient traceability for
 - Accepted By: same as above
 - Jira Feature ID: seperate relationship
 - Provenance: maintained primarily at Requirement Version level,   with detailed attribute-level provenance where required.
+
+## Lifecycle
+
+A requirement progresses through a defined lifecycle from initial
+capture through to verification.
+
+- A requirement initially captured by ReqPilot has a status of
+  Received.
+- A requirement can progress through Draft, Proposed, Approved,
+  Implemented and Verified states.
+- A proposed requirement can be Rejected.
+- An approved requirement can become Superseded.
+- Requirement IDs remain unchanged when requirements are modified.
+- Each significant modification creates a new Requirement Version.
+- Material changes require human approval.
+- AI can assess whether a change is minor or material and provide
+  a confidence score.
+- AI assessment is advisory and does not independently determine
+  approval requirements.
+- High-confidence minor changes may be automatically approved when
+  configured business rules allow this.
+- Auto-Approved changes must remain distinguishable from
+  human-approved changes.
