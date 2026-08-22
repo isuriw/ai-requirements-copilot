@@ -45,6 +45,82 @@ This avoids unnecessary complexity while maintaining sufficient traceability for
 - Tasks/Milestones → Delivery Planning
 - External References → External Systems
 
+### Decision
+
+A Decision records a business or project choice that establishes,
+changes or constrains how one or more requirements should be
+interpreted or implemented.
+
+A Decision can affect multiple Requirements.
+
+A Decision has its own immutable ID and maintains version history.
+
+Core information:
+
+- Decision ID
+- Decision Statement
+- Decider
+- Source
+- Source Location
+- AI Confidence
+- Version
+
+Decisions can be associated with multiple Requirements.
+
+### Approval
+Approval
+├── Approval ID
+├── Requirement ID
+├── Requirement Version
+├── Approver / Approval Actor
+├── Approval Method
+├── Approval Status
+├── Approval Timestamp
+└── Approver Notes
+ 
+### Risk
+
+A Risk represents a potential event, condition or circumstance that
+could negatively affect project or business outcomes and requires
+assessment or management.
+
+A Risk has its own immutable ID and maintains version history.
+
+Initial Risk Types:
+- Financial
+- Operational
+- Data
+- Compliance
+
+A Risk can exist independently of a Requirement.
+
+Core information:
+- Risk ID
+- Risk Name
+- Risk Domain
+- Risk Type
+- Risk Owner
+- Risk Version
+- Risk Assessment
+- Legislative References where applicable
+
+Risk ↔ Requirement is a many-to-many relationship.
+
+The relationship should identify:
+- Requirement ID
+- Requirement Version
+- Risk ID
+- Risk Version
+- Relationship ID
+- Relationship Type
+
+Examples of Relationship Types:
+- Causes
+- Resulting From
+- Mitigates
+- Contributes To
+
+
 ## Modelling Decisions
 
 - Requirement ID: need to be unique id that doesn't change with requiremnet modifications
@@ -78,3 +154,5 @@ capture through to verification.
   configured business rules allow this.
 - Auto-Approved changes must remain distinguishable from
   human-approved changes.
+
+
