@@ -121,6 +121,26 @@ Examples of Relationship Types:
 - Contributes To
 
 
+### Test Case
+
+A Test Case validates a specific Requirement Version.
+
+A Requirement Version can have multiple Test Cases.
+
+A Test Case should not automatically transfer to a new Requirement
+Version when the Requirement changes.
+
+A new or updated Requirement Version should be assessed to determine
+whether new or modified Test Cases are required.
+
+The Requirement ↔ Test Case relationship should contain:
+
+- Requirement ID
+- Requirement Version
+- Test Case ID
+- Relationship ID
+
+
 ## Modelling Decisions
 
 - Requirement ID: need to be unique id that doesn't change with requiremnet modifications
@@ -156,3 +176,33 @@ capture through to verification.
   human-approved changes.
 
 
+Impact Analysis
+
+A change to a Requirement Version may affect other entities and relationships within the project knowledge model.
+
+When a new Requirement Version is created, ReqPilot should assess the relationships associated with the previous version and identify potential impacts on related entities, including Decisions, Risks, Tasks, Milestones, Releases, and Test Cases.
+
+Impact analysis should be transitive. If an affected entity has relationships with other entities, those relationships should also be assessed for potential impact. Analysis continues until no additional potentially affected entities are identified.
+
+The impact analysis must:
+
+Preserve the history of the previous Requirement Version and its relationships.
+Determine whether existing relationships remain valid, need modification, or should be removed.
+Identify new relationships that may need to be created.
+Avoid assuming that every related entity is affected; each relationship must be assessed.
+Detect and prevent circular traversal by tracking entities that have already been evaluated.
+
+The resulting impact assessment should identify the potentially affected entities and provide sufficient context for review or further processing.
+
+## Requirement Decomposition
+
+When a requirement is determined to be too broad or complex and needs to be broken into multiple independent requirements, the resulting items are created as **new Requirement identities** rather than additional versions of the original requirement.
+
+The original requirement is retained for historical traceability and its status is changed to **Closed**, with the reason recorded as decomposition.
+
+The new requirements should maintain a relationship to the original requirement so that ReqPilot can trace how they were derived.
+
+Requirement versioning and requirement decomposition are distinct concepts:
+
+* **Versioning** represents a change to the definition of the same requirement.
+* **Decomposition** creates new requirements from an existing requirement.
