@@ -206,3 +206,78 @@ Requirement versioning and requirement decomposition are distinct concepts:
 
 * **Versioning** represents a change to the definition of the same requirement.
 * **Decomposition** creates new requirements from an existing requirement.
+
+
+## Task
+
+A Task represents a unit of work required to deliver or support project outcomes.
+
+### Core Attributes
+
+- Task ID
+- Task Name
+- Task Description
+- Status
+- Priority
+- Size
+- Created Date
+- Created By
+- Assigned To
+- Due Date
+
+Created By and Assigned To represent different roles. The person who creates a task may not be the person responsible for completing it.
+
+### Task–Requirement Version Relationship
+
+Tasks are linked to specific Requirement Versions through a separate relationship.
+
+The relationship contains:
+
+- Task ID
+- Requirement ID
+- Requirement Version
+- Relationship Type
+
+Examples of Relationship Types include Implements and Supports.
+
+A Task can support multiple Requirement Versions, and a Requirement Version can be supported by multiple Tasks.
+
+### Change and Traceability
+
+When a new Requirement Version is created, existing Task–Requirement Version relationships must be preserved.
+
+ReqPilot should assess whether each existing task remains relevant, requires modification, or needs additional work for the new Requirement Version.
+
+New relationships should be created when appropriate. Historical relationships must not be overwritten, and a new task must not be created automatically for every new Requirement Version.
+
+Task status is independent of Requirement status. Completing a task does not automatically mean that the associated requirement has been verified.
+
+### AI-Generated Task Handling
+
+ReqPilot may create a Task directly from an AI-generated suggestion.
+
+AI-generated Tasks must be distinguishable from human-created Tasks and must initially be marked as awaiting review.
+
+The Task should retain:
+- Creation origin (AI or Human)
+- AI generation timestamp, where applicable
+- Review status
+- Supporting source and Requirement Version relationships
+
+An AI-generated Task awaiting review must not be treated as accepted work. An authorised user can accept, edit, or reject the task.
+
+The review outcome and reviewer should be recorded for traceability. Rejecting a Task must not delete the supporting source evidence or the history of the AI-generated suggestion.
+
+### Review and Modification
+
+An authorised reviewer can:
+
+- **Accept** the Task as proposed.
+- **Edit** the Task before accepting it.
+- **Reject** the Task if it is not required or is incorrect.
+
+ReqPilot must preserve the Task's AI-generated origin when it is edited by a human.
+
+The system must record the review outcome, reviewer, and review timestamp. Where a reviewer edits the Task, the changes should be traceable so that the original AI suggestion can be distinguished from the human-modified result.
+
+Rejecting a Task must preserve its history and supporting source evidence.
